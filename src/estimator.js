@@ -10,7 +10,7 @@ const covid19ImpactEstimator = (data) => {
     let result = 0;
     if (format === 'days') {
       result = time;
-    } else if (format === 'days') {
+    } else if (format === 'weeks') {
       result = time * 7;
     } else if (format === 'months') {
       result = time * 30;
