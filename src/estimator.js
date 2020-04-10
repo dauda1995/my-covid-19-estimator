@@ -1,8 +1,11 @@
 const covid19ImpactEstimator = (data) => {
-    
+
+    const input = data;
 
    function fifteenpercent(digit){
+
        return ((15/100) *digit);
+       
    }
 
    function thirthyfivepercent(){
@@ -80,7 +83,7 @@ const covid19ImpactEstimator = (data) => {
 
 
     return {
-        data : data,
+        data : input,
         impact:{
             currentlyInfected : currentlyInfected1, 
             infectionsByRequestedTime : infectionsByRequestedTime1,
