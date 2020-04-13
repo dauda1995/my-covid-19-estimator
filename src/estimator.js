@@ -1,7 +1,7 @@
 const covid19ImpactEstimator = (data) => {
   const input = data;
   function fifteenpercent(digit) {
-    return (((15 / 100) * digit));
+    return (Math.trunc((15 / 100) * digit));
   }
   function fivePercent(digits) {
     return ((5 / 100) * digits);
