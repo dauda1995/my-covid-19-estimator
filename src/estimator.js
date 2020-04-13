@@ -33,11 +33,15 @@ const covid19ImpactEstimator = (data) => {
   };
 
 
-  const currentlyInfected1 = data.reportedCases * 10;
-  const severeCurrentlyInfected = data.reportedCases * 50;
+  // eslint-disable-next-line no-undef
+  const currentlyInfected1 = BigInt(data.reportedCases * 10);
+  // eslint-disable-next-line no-undef
+  const currentlyInfected2 = BigInt(data.reportedCases * 50);
 
-  const infectionsByRequestedTime1 = (currentlyInfected1 * (2 ** (nth(data.timeToElapse))));
-  const infectionsByRequestedTime2 = (severeCurrentlyInfected * (2 ** (nth(data.timeToElapse))));
+  // eslint-disable-next-line no-undef
+  const infectionsByRequestedTime1 = BigInt(currentlyInfected1 * BigInt(2 ** (nth(data.timeToElapse))));
+  // eslint-disable-next-line no-undef
+  const infectionsByRequestedTime2 = BigInt(currentlyInfected2 * BigInt(2 ** (nth(data.timeToElapse))));
 
   const severeCasesByRequestedTime1 = fifteenpercent(infectionsByRequestedTime1);
   const severeCasesByRequestedTime2 = fifteenpercent(infectionsByRequestedTime2);
@@ -72,7 +76,7 @@ const covid19ImpactEstimator = (data) => {
     },
 
     severeImpact: {
-      currentlyInfected: severeCurrentlyInfected,
+      currentlyInfected: currentlyInfected2,
       infectionsByRequestedTime: infectionsByRequestedTime2,
       severeCasesByRequestedTime: severeCasesByRequestedTime2,
       hospitalBedsByRequestedTime: hospitalBedsByRequestedTime2,
