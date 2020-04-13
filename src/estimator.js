@@ -25,7 +25,7 @@ const covid19ImpactEstimator = (data) => {
     let factor = 0;
     let total = 0;
     const day = noOfDays(days, data.periodType);
-    while (3 + total < day) {
+    while (3 + total <= day) {
       factor += 1;
       total += 3;
     }
