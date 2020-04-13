@@ -36,8 +36,8 @@ const covid19ImpactEstimator = (data) => {
   const currentlyInfected1 = data.reportedCases * 10;
   const severeCurrentlyInfected = data.reportedCases * 50;
 
-  const infectionsByRequestedTime1 = Math.trunc(currentlyInfected1 * (2 ** (nth(data.timeToElapse))));
-  const infectionsByRequestedTime2 = Math.trunc(severeCurrentlyInfected * (2 ** (nth(data.timeToElapse))));
+  const infectionsByRequestedTime1 = (currentlyInfected1 * (2 ** (nth(data.timeToElapse))));
+  const infectionsByRequestedTime2 = (severeCurrentlyInfected * (2 ** (nth(data.timeToElapse))));
 
   const severeCasesByRequestedTime1 = fifteenpercent(infectionsByRequestedTime1);
   const severeCasesByRequestedTime2 = fifteenpercent(infectionsByRequestedTime2);
