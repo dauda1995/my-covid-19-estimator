@@ -1,7 +1,7 @@
 const covid19ImpactEstimator = (data) => {
   const input = data;
   function fifteenpercent(digit) {
-    return ((15 / 100) * digit);
+    return (Math.trunc((15 / 100) * digit));
   }
   function fivePercent(digits) {
     return ((5 / 100) * digits);
@@ -15,7 +15,7 @@ const covid19ImpactEstimator = (data) => {
     } else if (format === 'months') {
       result = time * 30;
     }
-    return Math.floor(result);
+    return Math.trunc(result);
   };
 
   function twoPercent(digits) {
@@ -33,8 +33,8 @@ const covid19ImpactEstimator = (data) => {
   };
 
 
-  const currentlyInfected1 = Math.floor(data.reportedCases * 10);
-  const severeCurrentlyInfected = Math.floor(data.reportedCases * 50);
+  const currentlyInfected1 = Math.trunc(data.reportedCases * 10);
+  const severeCurrentlyInfected = Math.trunc(data.reportedCases * 50);
 
   const infectionsByRequestedTime1 = currentlyInfected1 * (2 ** (nth(data.timeToElapse)));
   const infectionsByRequestedTime2 = severeCurrentlyInfected * (2 ** (nth(data.timeToElapse)));
