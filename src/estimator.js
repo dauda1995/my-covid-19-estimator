@@ -34,9 +34,9 @@ const covid19ImpactEstimator = (data) => {
 
 
   // eslint-disable-next-line no-undef
-  const currentlyInfected1 = BigInt(data.reportedCases * 10);
+  const currentlyInfected1 = (data.reportedCases * 10);
   // eslint-disable-next-line no-undef
-  const currentlyInfected2 = BigInt(data.reportedCases * 50);
+  const currentlyInfected2 = (data.reportedCases * 50);
 
   // eslint-disable-next-line no-undef
   const infectionsByRequestedTime1 = (currentlyInfected1 * BigInt(2 ** (nth(data.timeToElapse))));
