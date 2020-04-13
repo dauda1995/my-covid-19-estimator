@@ -47,7 +47,7 @@ const covid19ImpactEstimator = (data) => {
   const severeCasesByRequestedTime2 = fifteenpercent(infectionsByRequestedTime2);
 
   // eslint-disable-next-line no-undef
-  const hospitalBedsByRequested = (digit) => (data.totalHospitalBeds - (BigInt(digit)));
+  const hospitalBedsByRequested = (digit) => (BigInt(data.totalHospitalBeds) - (BigInt(digit)));
 
   const hospitalBedsByRequestedTime1 = hospitalBedsByRequested(severeCasesByRequestedTime1);
   const hospitalBedsByRequestedTime2 = hospitalBedsByRequested(severeCasesByRequestedTime2);
