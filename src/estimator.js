@@ -39,9 +39,9 @@ const covid19ImpactEstimator = (data) => {
   const currentlyInfected2 = BigInt(data.reportedCases * 50);
 
   // eslint-disable-next-line no-undef
-  const infectionsByRequestedTime1 = BigInt(currentlyInfected1 * BigInt(2 ** (nth(data.timeToElapse))));
+  const infectionsByRequestedTime1 = (currentlyInfected1 * BigInt(2 ** (nth(data.timeToElapse))));
   // eslint-disable-next-line no-undef
-  const infectionsByRequestedTime2 = BigInt(currentlyInfected2 * BigInt(2 ** (nth(data.timeToElapse))));
+  const infectionsByRequestedTime2 = (currentlyInfected2 * BigInt(2 ** (nth(data.timeToElapse))));
 
   const severeCasesByRequestedTime1 = fifteenpercent(infectionsByRequestedTime1);
   const severeCasesByRequestedTime2 = fifteenpercent(infectionsByRequestedTime2);
